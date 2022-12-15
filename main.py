@@ -10,19 +10,27 @@ try:
 except FileExistsError:
     print("Directory " , dirName ,  " Folder already exists")
 
-fileType = input("Enter the filetype: ")
+fileType = input("Enter the filetype: ") #jpg
 
-loopStart = input("Start of the loop:")
-loopEnd = input("End of the loop:")
-
-# Define the path for the remote files to retrieve
-remote_url = 'https://upload.wikimedia.org/wikipedia/commons/b/b5/International_Morse_Code.svg'
-
-# Define the local filenames to save data
-local_file = dirName+'/File_p1'+'.'+fileType
+loopStart = int(input("Start of the loop: ")) #1
+loopEnd = int(input("End of the loop: "))+1 #130
 
 
 
 
-# Download remote and save locally
-request.urlretrieve(remote_url, local_file)
+for i in range (loopStart, loopEnd):
+    print(i)
+
+    # Define the path for the remote files to retrieve
+    remote_url = 'https://upload.wikimedia.org/wikipedia/commons/a/a3/Paleospace-'+str(i)+'.'+fileType 
+    print(remote_url)
+
+    # Define the local filenames to save data    
+    local_file = dirName+'/File'+str(i)+'.'+fileType
+    print(local_file)
+
+    # Download remote and save locally
+    request.urlretrieve(remote_url, local_file)
+
+
+
