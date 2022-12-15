@@ -19,10 +19,10 @@ loopEnd = int(input("End of the loop: "))+1 #130
 
 
 for i in range (loopStart, loopEnd):
-    print(i)
+    # print(i)
 
     # Define the path for the remote files to retrieve
-    remote_url = 'https://upload.wikimedia.org/wikipedia/commons/a/a3/Paleospace-'+str(i)+'.'+fileType 
+    remote_url = 'https://p.calameoassets.com/190319152727-a6c435d232451397cd06faaed256457b/p'+str(i)+'.'+fileType 
     print(remote_url)
 
     # Define the local filenames to save data    
